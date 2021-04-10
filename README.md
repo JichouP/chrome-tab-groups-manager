@@ -1,1 +1,1 @@
-# tab-groups-manager
+# Chrome Tab Groups Manager
