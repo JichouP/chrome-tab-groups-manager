@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Groups Manager",
+  "version": "1.0.0.0",
+  "description": "A Chrome extension to manage tab groups",
+  "permissions": ["tabs", "tabGroups"],
+  "commands": {
+    "move_left": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Left"
+      },
+      "description": "left"
+    },
+    "move_right": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Right"
+      },
+      "description": "right"
+    }
+  },
+  "background": { "service_worker": "background.js" }
+}
