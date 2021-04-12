@@ -1,1 +1,7 @@
-type Command = 'move_left' | 'move_right';
+declare namespace chrome {
+  namespace tabs {
+    interface TabChangeInfo {
+      groupId: number;
+    }
+  }
+}

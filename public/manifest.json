@@ -4,18 +4,29 @@
   "version": "1.0.0.0",
   "description": "A Chrome extension to manage tab groups",
   "permissions": ["tabs", "tabGroups"],
+  "icons": {
+    "16": "16.png",
+    "48": "48.png",
+    "128": "128.png"
+  },
   "commands": {
     "move_left": {
       "suggested_key": {
-        "default": "Ctrl+Shift+Left"
+        "default": "Alt+Shift+Left"
       },
       "description": "left"
     },
     "move_right": {
       "suggested_key": {
-        "default": "Ctrl+Shift+Right"
+        "default": "Alt+Shift+Right"
       },
-      "description": "right"
+      "description": "Move to right group"
+    },
+    "new_group": {
+      "suggested_key": {
+        "default": "Alt+Shift+Up"
+      },
+      "description": "Create a new tab group"
     }
   },
   "background": { "service_worker": "background.js" }

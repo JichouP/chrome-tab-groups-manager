@@ -1,5 +1,5 @@
-import { onCommand } from './commands';
-import { onCreated } from './tabs';
+import { onCommand, onTabCreated, onTabUpdated } from './listener';
 
 chrome.commands.onCommand.addListener(onCommand);
-chrome.tabs.onCreated.addListener(onCreated);
+chrome.tabs.onCreated.addListener(onTabCreated);
+chrome.tabs.onUpdated.addListener(onTabUpdated);
