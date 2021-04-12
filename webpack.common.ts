@@ -24,7 +24,7 @@ const module: webpack.ModuleOptions = {
 const config: webpack.Configuration = {
   target: 'node',
   entry: {
-    content_scripts: path.join(__dirname, 'src', 'content_scripts.ts'),
+    // content_scripts: path.join(__dirname, 'src', 'content_scripts.ts'),
     background: path.join(__dirname, 'src', 'background.ts'),
     // popup: path.join(__dirname, 'src', 'popup.tsx'),
   },
@@ -39,7 +39,10 @@ const config: webpack.Configuration = {
       '@': path.resolve(__dirname, 'src'),
     },
   },
-  plugins: [new ForkTsCheckerWebpackPlugin(), new CopyPlugin({ patterns: [{ from: '.', context: 'public' }] })],
+  plugins: [
+    new ForkTsCheckerWebpackPlugin(),
+    new CopyPlugin({ patterns: [{ from: '.', context: 'public' }] }),
+  ],
   externals: [webpackNodeExternals() as any],
 };
 
