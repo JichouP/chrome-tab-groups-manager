@@ -2,5 +2,6 @@
 
 This extension always includes tabs in tab groups.
 Even when you have a lot of tabs open, you can comfortably get on with the next task.
-You can use Alt + Shift + LeftArrow/RightArrow to change the tab index to next or previous.
-You can use Alt + Shift + UpArrow to make the current tab belong to a new tab group.
+With Alt + Shift + LeftArrow/RightArrow, you can change the index of the tab to next or previous.
+With Alt + Shift + UpArrow, you can make the current tab belong to a new tab group.
+With Alt + Shift + DownArrow, you can collapse all tab groups that are not currently in focus.

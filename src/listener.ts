@@ -5,6 +5,7 @@ import {
   getTabGroups,
   getTabs,
   moveTab,
+  updateTabGroup,
 } from './chrome';
 
 export const onTabCreated = async (tab: chrome.tabs.Tab): Promise<void> => {
@@ -40,7 +41,6 @@ export const onTabUpdated = async (
       .then((tab) => {
         if (!tab) return;
         if (tab.groupId === TAB_GROUP_ID_NONE) {
-          console.log(tab.status);
           addTabToGroup([tabId]);
         }
       })
@@ -72,7 +72,6 @@ export const onCommand = async (command: string): Promise<void> => {
       return;
     }
     case 'new_group': {
-      console.log('new group');
       const windowId = (await getCurrentWindow()).id;
       const tabs = await getTabs({ active: true, windowId });
       if (tabs.length === 0) return;
@@ -80,6 +79,18 @@ export const onCommand = async (command: string): Promise<void> => {
       const tabId = tab.id;
       if (!tabId) return;
       await addTabToGroup([tabId]);
+      return;
+    }
+    case 'collapse': {
+      const windowId = (await getCurrentWindow()).id;
+      const tabs = await getTabs({ active: true, windowId });
+      if (tabs.length === 0) return;
+      const tab = tabs[0];
+      (await getTabGroups({ windowId, collapsed: false }))
+        .filter((v) => v.id !== tab.groupId)
+        .forEach(async (tabGroup) => {
+          await updateTabGroup(tabGroup.id, { collapsed: true });
+        });
       return;
     }
   }

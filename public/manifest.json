@@ -14,19 +14,25 @@
       "suggested_key": {
         "default": "Alt+Shift+Left"
       },
-      "description": "left"
+      "description": "Change the index of the tab to next"
     },
     "move_right": {
       "suggested_key": {
         "default": "Alt+Shift+Right"
       },
-      "description": "Move to right group"
+      "description": "Change the index of the tab to next"
     },
     "new_group": {
       "suggested_key": {
         "default": "Alt+Shift+Up"
       },
-      "description": "Create a new tab group"
+      "description": "Make the current tab belong to a new tab group"
+    },
+    "collapse": {
+      "suggested_key": {
+        "default": "Alt+Shift+Down"
+      },
+      "description": "Collapse all tab groups that are not currently in focus."
     }
   },
   "background": { "service_worker": "background.js" }
