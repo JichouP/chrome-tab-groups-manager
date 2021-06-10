@@ -55,3 +55,10 @@ export const moveTab = async (
   new Promise((resolve) => {
     chrome.tabs.move(tabId, moveProperties, resolve);
   });
+
+export const checkLastError = (): void => {
+  const err = chrome.runtime.lastError;
+  if (err) {
+    return console.error(err);
+  }
+};

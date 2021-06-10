@@ -36,7 +36,7 @@ export const onTabUpdated = async (
 ): Promise<void> => {
   const { TAB_GROUP_ID_NONE } = chrome.tabGroups;
   if (changeInfo.groupId === TAB_GROUP_ID_NONE) {
-    await sleep(100);
+    await sleep(500);
     getTab(tabId)
       .then((tab) => {
         if (!tab) return;
